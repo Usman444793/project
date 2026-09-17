@@ -1,0 +1,957 @@
+﻿<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>Happy 20th Birthday Momina Imran! 🎀✨</title>
+    <!-- Tailwind CSS v3 with Forms & Container Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Dancing Script -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'blush-pink': '#fff0f5',
+            'strawberry-milk': '#fce7f3',
+            'soft-lavender': '#ede9fe',
+            'coquette-pink': '#f472b6',
+            'deep-rose': '#db2777',
+            'champagne-gold': '#fef3c7',
+            'warm-gold': '#f59e0b'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            script: ['"Dancing Script"', 'cursive']
+          },
+          boxShadow: {
+            'dreamy': '0 15px 35px -5px rgba(244, 114, 182, 0.25), 0 8px 15px -6px rgba(244, 114, 182, 0.1)',
+            'polaroid': '0 10px 25px -5px rgba(244, 114, 182, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            'glow-pink': '0 0 25px rgba(244, 114, 182, 0.45)'
+          }
+        }
+      }
+    }
+    </script>
+    <style>
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1.5deg); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 10px rgba(244,114,182,0.7)); }
+            50% { opacity: 1; filter: drop-shadow(0 0 20px rgba(251,191,36,0.9)); }
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-float { animation: floatSlow 4s ease-in-out infinite; }
+        .animate-glow { animation: pulseGlow 3s ease-in-out infinite; }
+        .pop-animate { animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(255, 215, 230, 0.7);
+        }
+        .glass-card-lavender {
+            background: rgba(253, 244, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(233, 213, 255, 0.75);
+        }
+        .polaroid-card {
+            background: #ffffff;
+            border: 1px solid rgba(255, 215, 230, 0.8);
+            box-shadow: 0 12px 30px -8px rgba(244, 114, 182, 0.18);
+            transition: all 0.3s ease;
+        }
+        .polaroid-card:hover {
+            transform: translateY(-4px) rotate(1deg);
+            box-shadow: 0 18px 35px -8px rgba(244, 114, 182, 0.3);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-[#fff1f5] via-[#fdf2f8] to-[#f5f3ff] text-slate-800 font-sans min-h-screen antialiased selection:bg-pink-200 selection:text-pink-900 pb-20">
+    <!-- Confetti & Floating Canvas -->
+    <canvas class="fixed inset-0 pointer-events-none z-50 w-full h-full" id="confettiCanvas"></canvas>
+
+    <!-- Reliable Public Domain Instrumental Lo-Fi Track -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Pachabel_Canon_in_D_Major_%28Guitar%29.ogg" type="audio/ogg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-40 px-4 py-3 backdrop-blur-md bg-white/75 border-b border-pink-200/60 shadow-xs">
+        <div class="max-w-4xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-2.5">
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-pink-100 text-coquette-pink shadow-inner text-base">🎀</span>
+                <div class="flex flex-col">
+                    <span class="text-[10px] sm:text-[11px] font-extrabold tracking-widest text-pink-500 uppercase">Chapter 20 • 21 Sept</span>
+                    <span class="text-xs sm:text-sm font-extrabold text-pink-900 tracking-tight">Momina Imran's Special Day 🌸</span>
+                </div>
+            </div>
+            <button class="px-3.5 py-1.5 text-xs font-semibold text-pink-700 bg-pink-100/90 hover:bg-pink-200 active:scale-95 transition-all rounded-full border border-pink-300 flex items-center gap-1.5 shadow-xs" onclick="triggerCheer()">
+                <span>Send Love</span>
+                <span class="animate-bounce">💖</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Wrapper -->
+    <main class="max-w-4xl mx-auto px-4 pt-6 space-y-8">
+        
+        <!-- Hero Section -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
+            <div class="md:col-span-7 text-center md:text-left space-y-3">
+                <div class="inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-bold text-pink-700 bg-white/90 rounded-full border border-pink-200 shadow-xs">
+                    <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+                    21st September 2026 • Turning 20 ✨
+                </div>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight leading-tight">
+                    Happy 20th Birthday, <br class="hidden sm:inline" />
+                    <span class="font-script text-pink-600 text-4xl sm:text-6xl font-bold tracking-wide animate-glow inline-block mt-1">Momina Imran 🧸🌸</span>
+                </h1>
+                <p class="text-xs sm:text-sm text-pink-900/80 max-w-md mx-auto md:mx-0 font-medium leading-relaxed">
+                    Stepping into your roaring twenties wrapped in cozy pastel dreams, aesthetic Pinterest vibes, and eternal golden sunshine. 🎀
+                </p>
+                
+                <div class="pt-2 grid grid-cols-3 gap-2 max-w-sm mx-auto md:mx-0">
+                    <div class="glass-card rounded-xl p-2.5 text-center shadow-xs">
+                        <p class="text-xs sm:text-sm font-bold text-pink-700 font-script text-base">20 Years</p>
+                        <p class="text-[9px] text-pink-500 font-semibold uppercase">Elegance</p>
+                    </div>
+                    <div class="glass-card rounded-xl p-2.5 text-center shadow-xs">
+                        <p class="text-xs sm:text-sm font-bold text-purple-700 font-script text-base">240 Months</p>
+                        <p class="text-[9px] text-purple-500 font-semibold uppercase">Sunshine</p>
+                    </div>
+                    <div class="glass-card rounded-xl p-2.5 text-center shadow-xs">
+                        <p class="text-xs sm:text-sm font-bold text-amber-700 font-script text-base">7,305 Days</p>
+                        <p class="text-[9px] text-amber-600 font-semibold uppercase">Smiles</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="md:col-span-5 relative">
+                <div class="relative mx-auto rounded-3xl p-3 bg-gradient-to-tr from-pink-300 via-rose-200 to-purple-300 shadow-dreamy max-w-sm md:max-w-none">
+                    <div class="relative rounded-2xl overflow-hidden bg-pink-50">
+                        <img alt="Momina Birthday Aesthetic" class="w-full h-auto object-cover rounded-2xl transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfHDRqNyrzci65QEBWGpTSmZZKfq6kbYWwONot9cZFMo7arenX3QpDLOCDX7-Jiah6xJthBfTHfhHwltEhicNrSpHlYl0UmdmIkLwJK2aN0xaHkyASQq97YIY9nmMqSZv0w317pB5NhKUdJzimSmfFdeyafkf608crq2WR9VndS3lcHCLL8i8LfhUCSKFFNC0YdszBF0axbLOu7xoOTYMnmQOAFOAPDotc5XpX3XgdDaJS_qrhPl5ZFg" />
+                        <div class="absolute bottom-3 left-3 right-3 glass-card rounded-xl px-3 py-2 flex items-center justify-between shadow-xs">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xl">🎂</span>
+                                <div class="text-left">
+                                    <p class="text-[11px] font-bold text-pink-900 leading-tight">Golden Chapter 20</p>
+                                    <p class="text-[10px] text-pink-600">Pure Joy &amp; Radiance</p>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-500 text-white">20 &amp; Cute</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pinterest-Style Aesthetic Moodboard -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between px-1">
+                <div>
+                    <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-1.5">
+                        <span>Momina's Pinterest Moodboard</span>
+                        <span class="text-coquette-pink">📌✨</span>
+                    </h2>
+                    <p class="text-xs text-pink-600">Aesthetic inspirations that scream Momina's 20th vibe</p>
+                </div>
+                <span class="text-[11px] font-semibold text-pink-700 bg-pink-100 px-2.5 py-0.5 rounded-full">Pin Board</span>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="polaroid-card p-3 pb-4 rounded-xl rotate-[-2deg]">
+                    <div class="rounded-lg overflow-hidden bg-pink-50 h-36 sm:h-40 mb-2">
+                        <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=400" alt="Pastel Cake" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                    </div>
+                    <p class="font-script text-pink-600 text-base text-center font-bold">Strawberry Cake 🍰</p>
+                </div>
+
+                <div class="polaroid-card p-3 pb-4 rounded-xl rotate-[2deg] translate-y-2">
+                    <div class="rounded-lg overflow-hidden bg-purple-50 h-36 sm:h-40 mb-2">
+                        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=400" alt="Aesthetic Art" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                    </div>
+                    <p class="font-script text-purple-600 text-base text-center font-bold">Soft Pastel Dreams 🩰</p>
+                </div>
+
+                <div class="polaroid-card p-3 pb-4 rounded-xl rotate-[-1deg]">
+                    <div class="rounded-lg overflow-hidden bg-rose-50 h-36 sm:h-40 mb-2">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=400" alt="Flowers" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                    </div>
+                    <p class="font-script text-rose-600 text-base text-center font-bold">Bouquet of Joy 💐</p>
+                </div>
+
+                <div class="polaroid-card p-3 pb-4 rounded-xl rotate-[3deg] translate-y-2">
+                    <div class="rounded-lg overflow-hidden bg-amber-50 h-36 sm:h-40 mb-2">
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=400" alt="Cozy Coffee" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                    </div>
+                    <p class="font-script text-amber-700 text-base text-center font-bold">Matcha &amp; Smiles 🍵</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Grid Tools: Candle Blower, Gift Box, Music -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- 1. Candle Blower -->
+            <div class="glass-card-lavender rounded-3xl p-5 shadow-dreamy text-center relative flex flex-col justify-between">
+                <div>
+                    <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-pink-200/70 text-[11px] font-bold text-pink-800 mb-2">
+                        <span>✨ Birthday Ritual</span>
+                    </div>
+                    <h2 class="text-base sm:text-lg font-bold text-slate-800">Make a 20th Wish! 🎂</h2>
+                    <p class="text-xs text-pink-700/80 mb-2">Close your eyes and blow out the candles!</p>
+                </div>
+                
+                <div class="relative w-36 h-36 mx-auto my-2 flex items-center justify-center">
+                    <img alt="Cake" class="w-full h-full object-contain filter drop-shadow-md animate-float" src="https://lh3.googleusercontent.com/aida/AEtjO1UzDnrLdBySuZQk08_jLK6VtbgN-OYj1-gRK_nwbvlUOxSJFxetaQCQKEhNTOGfTXptAMz1oCFXyaRyFS-2-_WApjhWrw3VRKMTaNK_FCKXUyBPoozrto8EdCEGw4ItJzqFE0vT2XXdc0umdNG23spwey__uikp056kj4zbpENEGGrFCrw9bpXzfAgVlhJeDGRfQ4Wx-29YEkRC74kjXfTk82h_jU_ElIvAFpedwaQ2FWmpO7RlAz-8zqtJ" />
+                    <div class="absolute top-6 w-16 h-8 bg-yellow-200/60 rounded-full blur-md animate-pulse" id="flameHalo"></div>
+                </div>
+
+                <div>
+                    <button class="w-full py-2.5 px-4 bg-gradient-to-r from-pink-500 to-rose-400 text-white font-bold text-xs rounded-full shadow-md shadow-pink-300/50 hover:from-pink-600 hover:to-rose-500 active:scale-95 transition-all flex items-center justify-center gap-2" id="blowCandleBtn" onclick="blowCandles()">
+                        <span>Blow the Candles</span>
+                        <span class="text-sm">🕯️💨</span>
+                    </button>
+                    <div class="hidden mt-3 p-2.5 bg-white/95 rounded-xl border border-pink-300 text-center pop-animate text-xs" id="wishGrantedMessage">
+                        <p class="font-bold text-pink-600">🎉 Wish Sent to the Stars! 🌟</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Virtual Present Box -->
+            <div class="glass-card rounded-3xl p-5 shadow-dreamy text-center relative flex flex-col justify-between">
+                <div>
+                    <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-purple-200/70 text-[11px] font-bold text-purple-900 mb-2">
+                        <span>🎁 Mystery Gift</span>
+                    </div>
+                    <h2 class="text-base sm:text-lg font-bold text-slate-800">Momina's Special Present</h2>
+                    <p class="text-xs text-pink-700/80 mb-3">A mystery birthday coupon crafted just for you!</p>
+                </div>
+
+                <div class="py-2" id="giftBoxUnopened">
+                    <button class="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-bold text-xs shadow-md active:scale-95 transition-all flex items-center gap-2 mx-auto" onclick="unwrapGift()">
+                        <span>Tap to Unwrap Surprise</span>
+                        <span class="animate-bounce">🎀</span>
+                    </button>
+                </div>
+                <div class="hidden p-4 bg-white/95 rounded-2xl border-2 border-dashed border-pink-400 pop-animate my-auto" id="giftBoxOpened">
+                    <span class="text-2xl">🎟️✨</span>
+                    <h3 class="text-xs font-extrabold text-pink-600 mt-1">GOLDEN BIRTHDAY PASS</h3>
+                    <p class="text-[11px] text-slate-700 mt-1 font-semibold">"Unlimited Bubble Tea &amp; Sweetest Pastries, plus 365 Days of Zero Stress!"</p>
+                    <p class="text-[9px] text-pink-400 mt-2 font-mono">CODE: MOMINA-TURNS-20-QUEEN</p>
+                </div>
+
+                <div class="text-[11px] text-slate-500 italic">Valid for all 20s &amp; beyond!</div>
+            </div>
+
+            <!-- 3. Working Instrumental Audio Player -->
+            <div class="glass-card rounded-3xl p-5 shadow-dreamy flex flex-col justify-between">
+                <div>
+                    <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-pink-100 text-[11px] font-bold text-pink-800 mb-2">
+                        <span>🎵 Soundtrack</span>
+                    </div>
+                    <h2 class="text-base sm:text-lg font-bold text-slate-800">Momina's Vibe</h2>
+                    <p class="text-xs text-pink-700/80 mb-4">Click play for relaxing instrumental melodies.</p>
+                </div>
+
+                <div class="flex items-center justify-between bg-white/80 p-3 rounded-2xl border border-pink-200">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-pink-400 to-purple-400 flex items-center justify-center text-white shadow-xs text-lg">
+                            🎧
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-800">Aesthetic Melody 🎶</p>
+                            <p class="text-[10px] text-pink-600" id="audioStatusText">Tap play to stream</p>
+                        </div>
+                    </div>
+                    <button aria-label="Play or pause music" class="w-9 h-9 rounded-full bg-pink-500 text-white flex items-center justify-center active:scale-90 transition shadow-xs" id="musicToggleBtn" onclick="toggleCuteTune()">
+                        <span id="playIcon">▶</span>
+                    </button>
+                </div>
+
+                <div class="mt-3">
+                    <div class="w-full bg-pink-100 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-pink-500 h-1.5 rounded-full transition-all duration-300" id="soundTrackProgress" style="width: 0%"></div>
+                    </div>
+                    <div class="flex justify-between items-center text-[10px] text-pink-400 mt-1">
+                        <span id="currentTimeDisplay">00:00</span>
+                        <span class="text-pink-600 italic font-semibold">Instrumental Stream 🌸</span>
+                        <span>HD Audio</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Coquette Mood Ring / Compliment Generator -->
+        <section class="glass-card-lavender rounded-3xl p-6 shadow-dreamy text-center space-y-4">
+            <div>
+                <span class="inline-block px-3 py-1 bg-white/85 text-pink-700 font-bold text-[11px] rounded-full border border-pink-200 mb-1">🎀 Momina's 20s Vibe Selector</span>
+                <h2 class="text-lg font-bold text-slate-800">Choose Your Current Birthday Energy</h2>
+                <p class="text-xs text-pink-700/80">Click a button below to unlock a special compliment!</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2">
+                <button onclick="setMood('matcha')" class="px-4 py-2 rounded-full text-xs font-bold bg-white/90 border border-green-200 text-green-800 hover:bg-green-50 active:scale-95 transition shadow-xs">🍵 Matcha &amp; Ambition</button>
+                <button onclick="setMood('coquette')" class="px-4 py-2 rounded-full text-xs font-bold bg-white/90 border border-pink-200 text-pink-800 hover:bg-pink-50 active:scale-95 transition shadow-xs">🎀 Coquette Princess</button>
+                <button onclick="setMood('golden')" class="px-4 py-2 rounded-full text-xs font-bold bg-white/90 border border-amber-200 text-amber-800 hover:bg-amber-50 active:scale-95 transition shadow-xs">✨ Golden Hour Glow</button>
+                <button onclick="setMood('boss')" class="px-4 py-2 rounded-full text-xs font-bold bg-white/90 border border-purple-200 text-purple-800 hover:bg-purple-50 active:scale-95 transition shadow-xs">💼 Unstoppable CEO</button>
+            </div>
+
+            <div id="moodOutputBox" class="hidden p-4 bg-white/95 rounded-2xl border border-pink-300 max-w-lg mx-auto pop-animate shadow-sm">
+                <p id="moodTitle" class="text-xs font-bold text-pink-600 uppercase tracking-wide">✨ Vibe Unlocked</p>
+                <p id="moodMessage" class="text-xs sm:text-sm text-slate-700 font-semibold mt-1">Select a mood above to reveal your message!</p>
+            </div>
+        </section>
+
+        <!-- Sweet Wishes Jar Carousel (6 Full Wishes) -->
+        <section class="space-y-3">
+            <div class="flex items-center justify-between px-1">
+                <div>
+                    <h2 class="text-base sm:text-lg font-bold text-slate-800 flex items-center gap-1.5">
+                        <span>Sweet Wishes Jar</span>
+                        <span class="text-coquette-pink">💌</span>
+                    </h2>
+                    <p class="text-xs text-pink-600">Heartfelt messages written just for Momina</p>
+                </div>
+                <span class="text-[11px] font-semibold text-purple-700 bg-purple-100 px-2.5 py-0.5 rounded-full">Jar of Notes 🌸</span>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <article class="glass-card rounded-2xl p-4 shadow-sm border border-pink-200/90 flex flex-col justify-between">
+                    <div>
+                        <div class="text-pink-400 text-2xl font-serif">“</div>
+                        <p class="text-xs text-slate-700 italic -mt-2 leading-relaxed font-medium">
+                            To the sweetest soul who lights up every room she walks into! Welcome to your roaring twenties, angel. Momina, you make the world so much softer!
+                        </p>
+                    </div>
+                    <div class="mt-3 pt-2 border-t border-pink-100 flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-pink-700">— Forever Bestie 🎀</span>
+                        <span class="text-xs">💖</span>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-2xl p-4 shadow-sm border border-purple-200/90 flex flex-col justify-between">
+                    <div>
+                        <div class="text-purple-400 text-2xl font-serif">“</div>
+                        <p class="text-xs text-slate-700 italic -mt-2 leading-relaxed font-medium">
+                            Happy 20th Birthday, Momina Imran! May this big milestone bring you infinite matcha lattes, cozy rainy days, academic triumph, and unconditional joy!
+                        </p>
+                    </div>
+                    <div class="mt-3 pt-2 border-t border-purple-100 flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-purple-700">— Family Love 🏡</span>
+                        <span class="text-xs">🧁</span>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-2xl p-4 shadow-sm border border-rose-200/90 flex flex-col justify-between">
+                    <div>
+                        <div class="text-rose-400 text-2xl font-serif">“</div>
+                        <p class="text-xs text-slate-700 italic -mt-2 leading-relaxed font-medium">
+                            20 looks unreal on you, queen! Never stop smiling that radiant laugh that cures everyone's gloomy days. You are destined for pure greatness!
+                        </p>
+                    </div>
+                    <div class="mt-3 pt-2 border-t border-rose-100 flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-rose-700">— College Squad 🌸</span>
+                        <span class="text-xs">✨</span>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-2xl p-4 shadow-sm border border-pink-200/90 flex flex-col justify-between">
+                    <div>
+                        <div class="text-pink-400 text-2xl font-serif">“</div>
+                        <p class="text-xs text-slate-700 italic -mt-2 leading-relaxed font-medium">
+                            May your 20s be filled with wonderful adventures, spontaneous road trips, cozy book dates, and success beyond your wildest dreams.
+                        </p>
+                    </div>
+                    <div class="mt-3 pt-2 border-t border-pink-100 flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-pink-700">— Childhood Friend 🌷</span>
+                        <span class="text-xs">🧸</span>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-2xl p-4 shadow-sm border border-purple-200/90 flex flex-col justify-between">
+                    <div>
+                        <div class="text-purple-400 text-2xl font-serif">“</div>
+                        <p class="text-xs text-slate-700 italic -mt-2 leading-relaxed font-medium">
+                            You carry such a calm, beautiful energy wherever you go, Momina. Never change your kind, genuine heart!
+                        </p>
+                    </div>
+                    <div class="mt-3 pt-2 border-t border-purple-100 flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-purple-700">— Cousin Ayesha ☕</span>
+                        <span class="text-xs">💫</span>
+                    </div>
+                </article>
+
+                <article class="glass-card rounded-2xl p-4 shadow-sm border border-rose-200/90 flex flex-col justify-between">
+                    <div>
+                        <div class="text-rose-400 text-2xl font-serif">“</div>
+                        <p class="text-xs text-slate-700 italic -mt-2 leading-relaxed font-medium">
+                            Cheers to two full decades of absolute gorgeousness and brilliance. Happy 20th birthday to our favorite girl!
+                        </p>
+                    </div>
+                    <div class="mt-3 pt-2 border-t border-rose-100 flex items-center justify-between">
+                        <span class="text-[11px] font-bold text-rose-700">— The Fan Club 🎀</span>
+                        <span class="text-xs">🎂</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 20 Full Reasons Why We Adore Momina -->
+        <section class="glass-card rounded-3xl p-5 sm:p-6 shadow-dreamy">
+            <div class="flex items-center space-x-2.5 mb-4">
+                <span class="text-xl">🌸</span>
+                <div>
+                    <h2 class="text-base sm:text-lg font-bold text-slate-800">20 Reasons Why We Adore Momina</h2>
+                    <p class="text-xs text-pink-600">Tap each tile below to uncover all 20 reasons!</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <!-- 1 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason1')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">01</span>
+                            Her Infectious, Cozy Laugh
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason1">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason1">
+                        Momina's laugh literally has the power to instantly clear any storm. It's warm, genuine, and impossibly sweet!
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason2')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">02</span>
+                            The Kindest Heart in the Room
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason2">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason2">
+                        She remembers every single tiny detail about people and always makes everyone feel deeply cherished and heard.
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason3')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">03</span>
+                            Flawless Aesthetic &amp; Style Sense
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason3">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason3">
+                        From dreamy pastel color codes to ribbons and cozy coquette outfits, she is effortless grace personified!
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason4')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">04</span>
+                            An Unstoppable Dream Chaser
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason4">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason4">
+                        Stepping into her twenties with ambitions as vast as the sky. There is nothing she cannot achieve!
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason5')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">05</span>
+                            Always There for Friends
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason5">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason5">
+                        Whenever someone needs a shoulder or a listening ear, Momina drops everything to be present.
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason6')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">06</span>
+                            Her Great Taste in Music
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason6">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason6">
+                        Her playlists are always immaculate—filled with cozy lo-fi, indie pop, and feel-good anthems.
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason7')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">07</span>
+                            Her Gentle, Calming Aura
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason7">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason7">
+                        Being around her feels like a warm cup of tea on a rainy afternoon—so soothing and peaceful.
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason8')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">08</span>
+                            Her Brilliant Mind
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason8">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason8">
+                        Smart, quick-witted, and incredibly capable of solving any problem with intelligence and poise.
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason9')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">09</span>
+                            Her Eye for Little Details
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason9">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason9">
+                        She notices when someone gets a new haircut, a subtle mood shift, or a tiny thoughtful gesture.
+                    </div>
+                </div>
+
+                <!-- 10 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason10')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">10</span>
+                            Her Radiant Optimism
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason10">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason10">
+                        Even during tough times, Momina finds the silver lining and inspires everyone around her.
+                    </div>
+                </div>
+
+                <!-- 11 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason11')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">11</span>
+                            Her Thoughtful Gift Giving
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason11">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason11">
+                        She picks out the most personalized, meaningful little presents that make people feel so special.
+                    </div>
+                </div>
+
+                <!-- 12 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason12')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">12</span>
+                            Her Unshakeable Loyalty
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason12">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason12">
+                        If you're friends with Momina, you have a ride-or-die for life who will always have your back.
+                    </div>
+                </div>
+
+                <!-- 13 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason13')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">13</span>
+                            Her Sweet Appreciation for Food &amp; Desserts
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason13">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason13">
+                        Her enthusiasm for bubble tea, strawberry cakes, and delicious treats makes every outing extra fun.
+                    </div>
+                </div>
+
+                <!-- 14 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason14')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">14</span>
+                            Her Incredible Patience
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason14">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason14">
+                        She handles chaotic situations with remarkable grace and calm composure.
+                    </div>
+                </div>
+
+                <!-- 15 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason15')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">15</span>
+                            Her Passion for Learning New Things
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason15">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason15">
+                        Always curious, eager to expand her horizons, and excited about what the future holds.
+                    </div>
+                </div>
+
+                <!-- 16 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason16')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">16</span>
+                            Her Genuine Humility
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason16">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason16">
+                        Despite having so many wonderful qualities, she remains grounded, sweet, and unassuming.
+                    </div>
+                </div>
+
+                <!-- 17 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason17')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">17</span>
+                            Her Creative Spark
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason17">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason17">
+                        Whether it's decorating spaces or organizing events, she brings an artistic touch to everything.
+                    </div>
+                </div>
+
+                <!-- 18 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason18')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">18</span>
+                            Her Encouraging Words
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason18">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason18">
+                        She is the ultimate cheerleader who genuinely roots for everyone's success.
+                    </div>
+                </div>
+
+                <!-- 19 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason19')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">19</span>
+                            Her Warm Hugs &amp; Presence
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason19">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason19">
+                        Just having Momina in the room instantly makes everything feel cozier and happier.
+                    </div>
+                </div>
+
+                <!-- 20 -->
+                <div class="border border-pink-200/90 rounded-2xl overflow-hidden bg-white/70">
+                    <button class="w-full text-left px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-700" onclick="toggleAccordion('reason20')">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-600 text-[11px] flex items-center justify-center font-black">20</span>
+                            Simply Because She is Momina!
+                        </span>
+                        <span class="text-pink-500 transition-transform font-bold" id="arrow-reason20">▼</span>
+                    </button>
+                    <div class="hidden px-4 pb-3 text-xs text-slate-600 border-t border-pink-100 pt-2" id="content-reason20">
+                        At the end of the day, we love her simply for being her wonderful, irreplaceable self. Happy 20th birthday! 💖
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Birthday Guestbook Form -->
+        <section class="glass-card rounded-3xl p-6 shadow-dreamy max-w-2xl mx-auto">
+            <div class="flex items-center space-x-2.5 mb-2">
+                <span class="text-xl">💌</span>
+                <div>
+                    <h2 class="text-base sm:text-lg font-bold text-slate-800">Leave Momina a Birthday Note</h2>
+                    <p class="text-xs text-pink-600">Delivered directly to <span class="font-semibold text-pink-800">imominaimran24@gmail.com</span></p>
+                </div>
+            </div>
+            
+            <form action="https://formspree.io/f/mqakeewy" method="POST" class="space-y-3.5 mt-3" id="wishForm" onsubmit="handleWishSubmit(event)">
+                <input type="hidden" name="_subject" value="New 20th Birthday Wish for Momina Imran! 🎀">
+                <input type="hidden" name="_to" value="imominaimran24@gmail.com">
+                
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1" for="senderName">Your Name / Relation</label>
+                    <input name="name" class="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white/95 border border-pink-200 focus:border-pink-500 focus:ring-pink-300 transition shadow-inner" id="senderName" placeholder="e.g. Bestie Amna / Friend Hadia 🌸" required type="text" />
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1" for="senderMessage">Your Birthday Message for Momina</label>
+                    <textarea name="message" class="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white/95 border border-pink-200 focus:border-pink-500 focus:ring-pink-300 transition shadow-inner" id="senderMessage" placeholder="Write something heartwarming for her 20th birthday..." required rows="3.5"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-pink-500 to-rose-400 text-white font-bold text-xs rounded-xl shadow-md active:scale-95 transition-all flex items-center justify-center gap-2">
+                    <span>Send Direct Message to Momina</span>
+                    <span>🚀💖</span>
+                </button>
+            </form>
+            <div id="formSuccessMsg" class="hidden mt-3 p-3.5 bg-pink-100 rounded-xl text-xs text-pink-900 font-bold text-center pop-animate">
+                ✨ Success! Your wish has been successfully beamed straight to Momina's inbox! 💌
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center pt-6 pb-4 space-y-2">
+            <div class="flex justify-center items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
+                <span class="font-script text-xl text-pink-700">Forever Twenty &amp; Beloved</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
+            </div>
+            <p class="text-xs text-pink-600/80">
+                Crafted with infinite love for Momina Imran’s 20th Birthday • 21st September ✨
+            </p>
+        </footer>
+    </main>
+
+    <!-- Scripts & Interactive Handlers -->
+    <script>
+        // Confetti Engine
+        const canvas = document.getElementById('confettiCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let isConfettiActive = false;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function createParticle() {
+            const colors = ['#f472b6', '#fb7185', '#c084fc', '#fde047', '#fed7aa', '#ffffff'];
+            return {
+                x: Math.random() * canvas.width,
+                y: -10,
+                size: Math.random() * 8 + 4,
+                speedY: Math.random() * 3 + 2,
+                speedX: (Math.random() - 0.5) * 2,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                rotation: Math.random() * 360,
+                rotationSpeed: (Math.random() - 0.5) * 4,
+                isHeart: Math.random() > 0.5
+            };
+        }
+
+        function fireConfettiBurst(count = 70) {
+            for (let i = 0; i < count; i++) {
+                particles.push(createParticle());
+            }
+            if (!isConfettiActive) {
+                isConfettiActive = true;
+                renderConfetti();
+            }
+        }
+
+        function renderConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                p.y += p.speedY;
+                p.x += p.speedX;
+                p.rotation += p.rotationSpeed;
+
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate((p.rotation * Math.PI) / 180);
+                ctx.fillStyle = p.color;
+
+                if (p.isHeart) {
+                    ctx.beginPath();
+                    const topCurveHeight = p.size * 0.3;
+                    ctx.moveTo(0, topCurveHeight);
+                    ctx.bezierCurveTo(0, 0, -p.size / 2, 0, -p.size / 2, topCurveHeight);
+                    ctx.bezierCurveTo(-p.size / 2, (p.size + topCurveHeight) / 2, 0, (p.size + topCurveHeight) / 1.5, 0, p.size);
+                    ctx.bezierCurveTo(0, (p.size + topCurveHeight) / 1.5, p.size / 2, (p.size + topCurveHeight) / 2, p.size / 2, topCurveHeight);
+                    ctx.bezierCurveTo(p.size / 2, 0, 0, 0, 0, topCurveHeight);
+                    ctx.closePath();
+                    ctx.fill();
+                } else {
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                }
+                ctx.restore();
+
+                if (p.y > canvas.height + 20) {
+                    particles.splice(i, 1);
+                }
+            }
+
+            if (particles.length > 0) {
+                requestAnimationFrame(renderConfetti);
+            } else {
+                isConfettiActive = false;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        function triggerCheer() {
+            fireConfettiBurst(60);
+        }
+
+        let candlesBlown = false;
+        function blowCandles() {
+            if (candlesBlown) return;
+            candlesBlown = true;
+            fireConfettiBurst(90);
+            
+            document.getElementById('flameHalo').style.display = 'none';
+            document.getElementById('blowCandleBtn').innerHTML = '<span>Candles Blown Out! 🎂💨</span>';
+            document.getElementById('blowCandleBtn').classList.add('opacity-75', 'cursor-not-allowed');
+            document.getElementById('wishGrantedMessage').classList.remove('hidden');
+        }
+
+        // Real Working Audio Logic
+        const bgMusic = document.getElementById('bgMusic');
+        let isPlaying = false;
+
+        function toggleCuteTune() {
+            const icon = document.getElementById('playIcon');
+            const btn = document.getElementById('musicToggleBtn');
+            const statusText = document.getElementById('audioStatusText');
+
+            if (!isPlaying) {
+                bgMusic.play().then(() => {
+                    isPlaying = true;
+                    icon.textContent = '⏸';
+                    btn.classList.add('animate-pulse');
+                    statusText.textContent = 'Now Playing 🎶';
+                    fireConfettiBurst(25);
+                }).catch(err => {
+                    console.error("Audio playback prevented:", err);
+                    alert("Please click anywhere on the page first, then press play again!");
+                });
+            } else {
+                bgMusic.pause();
+                isPlaying = false;
+                icon.textContent = '▶';
+                btn.classList.remove('animate-pulse');
+                statusText.textContent = 'Paused ⏸';
+            }
+        }
+
+        // Update progress bar & time ticker
+        bgMusic.addEventListener('timeupdate', () => {
+            if (bgMusic.duration) {
+                const percent = (bgMusic.currentTime / bgMusic.duration) * 100;
+                document.getElementById('soundTrackProgress').style.width = percent + '%';
+                
+                const mins = Math.floor(bgMusic.currentTime / 60);
+                const secs = Math.floor(bgMusic.currentTime % 60);
+                document.getElementById('currentTimeDisplay').textContent = 
+                    (mins < 10 ? '0' + mins : mins) + ':' + (secs < 10 ? '0' + secs : secs);
+            }
+        });
+
+        // Mood Selector Logic
+        function setMood(type) {
+            const box = document.getElementById('moodOutputBox');
+            const title = document.getElementById('moodTitle');
+            const msg = document.getElementById('moodMessage');
+            box.classList.remove('hidden');
+
+            if (type === 'matcha') {
+                title.textContent = '🍵 Matcha & Ambition Vibe';
+                msg.textContent = 'Momina is stepping into her twenties with iced matcha in hand, sharp goals, and unstoppable grace!';
+            } else if (type === 'coquette') {
+                title.textContent = '🎀 Coquette Princess Vibe';
+                msg.textContent = 'Soft ribbons, dreamy pastels, and an aura of pure elegance wherever she goes.';
+            } else if (type === 'golden') {
+                title.textContent = '✨ Golden Hour Glow';
+                msg.textContent = 'Radiant, loved, and shining brighter than ever as she turns 20 today!';
+            } else if (type === 'boss') {
+                title.textContent = '💼 Unstoppable CEO Energy';
+                msg.textContent = 'Ready to conquer every single dream and build an incredible life in her 20s!';
+            }
+            fireConfettiBurst(35);
+        }
+
+        function toggleAccordion(id) {
+            const content = document.getElementById('content-' + id);
+            const arrow = document.getElementById('arrow-' + id);
+            content.classList.toggle('hidden');
+            arrow.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+
+        function unwrapGift() {
+            document.getElementById('giftBoxUnopened').classList.add('hidden');
+            document.getElementById('giftBoxOpened').classList.remove('hidden');
+            fireConfettiBurst(80);
+        }
+
+        function handleWishSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('wishForm');
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset();
+                    document.getElementById('formSuccessMsg').classList.remove('hidden');
+                    fireConfettiBurst(80);
+                } else {
+                    alert('Oops! There was a problem sending your message. Please try again.');
+                }
+            }).catch(error => {
+                alert('Oops! Network error. Please check your connection.');
+            });
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(() => { fireConfettiBurst(50); }, 400);
+        });
+    </script>
+</body>
+</html>
